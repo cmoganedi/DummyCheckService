@@ -6,8 +6,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.6.22" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Postal.AspNetCore" Version="2.2.1.1" />
+    <PackageReference Include="Select.Pdf.NetCore" Version="18.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Files\RecruiterMail.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\result.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

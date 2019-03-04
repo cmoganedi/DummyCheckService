@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Hangfire;
+using DummyCheckService.Controllers;
 
 namespace DummyCheckService
 {
@@ -26,6 +28,7 @@ namespace DummyCheckService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddHangfire(x => x.UseSqlServerStorage("DefaultConnection"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,6 +46,10 @@ namespace DummyCheckService
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            //app.UseHangfireServer();
+            //app.UseHangfireDashboard();
+            //LongRunningMail obj = new LongRunningMail();
+            //RecurringJob.AddOrUpdate(() => obj(), Cron.Hourly);
         }
     }
 }
