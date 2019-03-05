@@ -5,27 +5,19 @@ using System.Threading.Tasks;
 
 namespace DummyCheckService
 {
-    public class CriminalCheck
+    public class Checks
     {
+        public Checks(string cname, string csurname, int id, bool result)
+        {
+            name = cname;
+            surname = csurname;
+            idNr = id;
+            checkResult = result;
+        }
         public string name;
         public string surname;
         public int idNr;
-        public string[] CriminalRecords;
-    }
+        public bool checkResult;
 
-    public class CreditCheck
-    {
-        public string name;
-        public string surname;
-        public int idNr;
-        public int creditScore;
-    }
-
-    public class AcademicCheck
-    {
-        public string name;
-        public string surname;
-        public int idNr;
-        public bool hasQualification;
     }
 }
