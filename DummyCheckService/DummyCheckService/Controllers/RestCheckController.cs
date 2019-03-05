@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
-using DummyCheckService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,37 +19,25 @@ namespace DummyCheckService.Controllers
         // GET: api/RestCheck
         [HttpPost]
         [Route("Compuscan")]
-        public CreditCheck Compuscan([FromBody] JObject candidateDetails)
-        {
-            CreditCheck check = new CreditCheck();
-            check.name = candidateDetails["name"].ToString();
-            check.surname = candidateDetails["surname"].ToString();
-            check.idNr = (int) candidateDetails["id"];
-            check.creditScore = 770;
-
-            return check;
+        public JObject Compuscan([FromBody] JObject candidateDetails)
+        {   
+            return JObject.FromObject(new Checks((string)candidateDetails["name"], (string) candidateDetails["surname"], (int) candidateDetails["id"], true));
         }
 
         // GET api/RestCheck/5
         [HttpPost]
         [Route("XDS")]
-        public bool XDS([FromBody] JObject candidateDetails)
+        public JObject XDS([FromBody] JObject candidateDetails)
         {
-            return true;
+            return JObject.FromObject(new Checks((string) candidateDetails["name"], (string) candidateDetails["surname"], (int) candidateDetails["id"], false));
         }
 
         // POST api/RestCheck
         [HttpPost]
-        [Route("Exeperian")]
-        public AcademicCheck Experian([FromBody] JObject candidateDetails)
+        [Route("Experian")]
+        public JObject Experian([FromBody] JObject candidateDetails)
         {
-            AcademicCheck check = new AcademicCheck();
-            check.name = candidateDetails["name"].ToString();
-            check.surname = candidateDetails["surname"].ToString();
-            check.idNr = (int)candidateDetails["id"];
-            check.hasQualification = true;
-
-            return check;
+            return JObject.FromObject(new Checks((string)candidateDetails["name"], (string)candidateDetails["surname"], (int)candidateDetails["id"], false));
         }
     }
 }
