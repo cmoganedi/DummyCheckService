@@ -16,7 +16,7 @@ namespace DummyCheckService.Controllers
         public enum checkStatus { Active, Failed, PossibleIssues, Cleared, InProgress, NotStarted}
 
         // POST: api/available/addService
-        [HttpGet]
+        [HttpPost]
         [Route("theEndpoint")]
         public ActionResult theEndpoint()
         {
@@ -30,7 +30,7 @@ namespace DummyCheckService.Controllers
             result.file = Convert.ToBase64String(file);
 
 
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("some api route");
+            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("https://localhost:44347/LongRunningENdpoint");
             webRequest.ContentType = "application/json";
             webRequest.Method = "POST";
             webRequest.KeepAlive = true;
@@ -46,7 +46,7 @@ namespace DummyCheckService.Controllers
             webRequest.ContentLength = body.Length;
             newStream.Write(body, 0, body.Length);
             newStream.Close();
-            webRequest.GetResponse();
+           // webRequest.GetResponse();
 
             return Ok(webRequest.GetResponse()); 
         }
