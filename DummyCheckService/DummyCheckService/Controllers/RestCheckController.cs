@@ -13,10 +13,18 @@ namespace DummyCheckService.Controllers
     [Route("api/[controller]")]
     public class RestCheckController : Controller
     {
+
+        // GET: api/RestCheck
+        [HttpGet]
+        [Route("ping")]
+        public string ping()
+        {
+            return "API up and running!";
+        }
         // GET: api/RestCheck
         [HttpPost]
-        [Route("GetCreditCheck")]
-        public CreditCheck GetCreditCheck([FromBody] JObject candidateDetails)
+        [Route("Compuscan")]
+        public CreditCheck Compuscan([FromBody] JObject candidateDetails)
         {
             CreditCheck check = new CreditCheck();
             check.name = candidateDetails["name"].ToString();
@@ -29,43 +37,23 @@ namespace DummyCheckService.Controllers
 
         // GET api/RestCheck/5
         [HttpPost]
-        [Route("GetIdentityCheck")]
-        public bool GetIdentityCheck([FromBody] JObject candidateDetails)
+        [Route("XDS")]
+        public bool XDS([FromBody] JObject candidateDetails)
         {
             return true;
         }
 
         // POST api/RestCheck
         [HttpPost]
-        [Route("GetAcademicCheck")]
-        public AcademicCheck GetAcademicCheck([FromBody] JObject candidateDetails)
+        [Route("Exeperian")]
+        public AcademicCheck Experian([FromBody] JObject candidateDetails)
         {
             AcademicCheck check = new AcademicCheck();
             check.name = candidateDetails["name"].ToString();
             check.surname = candidateDetails["surname"].ToString();
             check.idNr = (int)candidateDetails["id"];
             check.hasQualification = true;
-            return check;
-        }
 
-        // POST api/RestCheck
-        [HttpPost]
-        [Route("GetDriversCheck")]
-        public bool GetDriversCheck([FromBody] JObject candidateDetails)
-        {
-            return true;
-        }
-
-        // POST api/RestCheck
-        [HttpPost]
-        [Route("GetCriminalCheck")]
-        public CriminalCheck GetCriminalCheck([FromBody] JObject candidateDetails)
-        {
-            CriminalCheck check = new CriminalCheck();
-            check.name = candidateDetails["name"].ToString();
-            check.surname = candidateDetails["surname"].ToString();
-            check.idNr = (int)candidateDetails["id"];
-            check.CriminalRecords = new string []{"Murder", "Arson"};
             return check;
         }
     }

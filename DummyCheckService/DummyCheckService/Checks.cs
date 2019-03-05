@@ -19,6 +19,7 @@ namespace DummyCheckService
         public string surname;
         public int idNr;
         public int creditScore;
+
     }
 
     public class AcademicCheck
