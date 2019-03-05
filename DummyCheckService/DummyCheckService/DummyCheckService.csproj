@@ -17,7 +17,7 @@
     <None Update="Files\RecruiterMail.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Files\result.pdf">
+    <None Update="Files\results.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
