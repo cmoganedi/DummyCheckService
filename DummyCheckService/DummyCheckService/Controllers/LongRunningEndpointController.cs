@@ -30,15 +30,10 @@ namespace DummyCheckService.Controllers
             result.file = Convert.ToBase64String(file);
 
 
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("https://localhost:44347/LongRunningENdpoint");
+            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create("https://localhost:44347/api/Results/LongRunningEndpoint");
             webRequest.ContentType = "application/json";
             webRequest.Method = "POST";
             webRequest.KeepAlive = true;
-
-            //ASCIIEncoding encoding = new ASCIIEncoding();
-            //byte[] body = System.IO.GetBytes(result);
-
-            //webRequest.ContentLength = result.Length;
 
             byte[] body = Encoding.UTF8.GetBytes(result.ToString());
             Stream newStream = webRequest.GetRequestStream();
@@ -46,7 +41,6 @@ namespace DummyCheckService.Controllers
             webRequest.ContentLength = body.Length;
             newStream.Write(body, 0, body.Length);
             newStream.Close();
-           // webRequest.GetResponse();
 
             return Ok(webRequest.GetResponse()); 
         }
