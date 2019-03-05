@@ -30,21 +30,125 @@ namespace DummyCheckService.Controllers
         [Route("Compuscan")]
         public string Compuscan(string value)
         {
-            SOAPService soapObject = new SOAPService();
-            //string soap = soapObject.RompuscanResponse();
-
-            return soapObject.RompuscanResponse();
+            SOAPService soapObject = new SOAPService(value);
+            string cridentialsRequired = soapObject.getCredentials();
+            return soapObject.RompuscanResponse(cridentialsRequired);
 
         }
         // POST api/<controller>/therest
         [HttpPost]
-        [Route("TheRest")]
-        public string therest([FromBody]string value)
+        [Route("Umalusi")]
+        public string Umalusi(string value)
         {
             SOAPService soapObject = new SOAPService();
             string soap = soapObject.TherestResponse();
 
             return soap;
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("Afiswitch")]
+        public string Afiswitch(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("LexisNexis")]
+        public string LexisNexis(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("MIE")]
+        public string MIE(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("PNet")]
+        public string PNet(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("Transunion")]
+        public string Transunion(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("XDS")]
+        public string XDS(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("Experian")]
+        public string Experian(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("SAPS")]
+        public string SAPS(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("FSCA")]
+        public string FSCA(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("INSETA")]
+        public string INSETA(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("TrafficDepartment")]
+        public string TrafficDepartment(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("HomeAffairs")]
+        public string HomeAffairs(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
+        }
+        // POST api/<controller>/therest
+        [HttpPost]
+        [Route("SAQA")]
+        public string SAQA(string value)
+        {
+            SOAPService soapObject = new SOAPService();
+            return soapObject.TherestResponse();
         }
     }
 }
