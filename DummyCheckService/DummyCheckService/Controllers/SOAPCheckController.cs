@@ -32,8 +32,8 @@ namespace DummyCheckService.Controllers
         {
             SOAPService soapObject = new SOAPService(value);
             string cridentialsRequired = soapObject.getCredentials();
-            return soapObject.RompuscanResponse(cridentialsRequired);
-
+            string test = soapObject.RompuscanResponse(cridentialsRequired);
+            return test;
         }
         // POST api/<controller>/therest
         [HttpPost]
