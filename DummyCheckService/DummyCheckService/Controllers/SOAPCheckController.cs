@@ -28,7 +28,7 @@ namespace DummyCheckService.Controllers
         // POST api/<controller>/compuscan
         [HttpPost]
         [Route("Compuscan")]
-        public string Compuscan(string value)
+        public string Compuscan([FromBody]string value)
         {
             SOAPService soapObject = new SOAPService(value);
             string cridentialsRequired = soapObject.getCredentials();
@@ -38,7 +38,7 @@ namespace DummyCheckService.Controllers
         // POST api/<controller>/therest
         [HttpPost]
         [Route("Umalusi")]
-        public string Umalusi(string value)
+        public string Umalusi([FromBody] string value)
         {
             SOAPService soapObject = new SOAPService();
             string soap = soapObject.TherestResponse();

@@ -40,13 +40,15 @@ namespace DummyCheckService.Services
         }
 
         private static readonly string otherXmlResponse =
-        @"<datetime>2019-03-14_14h45</datetime>
+        @"<?xml version='1.0' encoding='utf-8'?>
+        <root>
+        <datetime>2019-03-14_14h45</datetime>
         <name>Sphelele</name>
         <identity>880201025452082</identity>
-        <checkid>456</checkid>
-        <checkstatus>success</checkstatus>
-        <resultstatus>the check was completed with success</resultstatus>
-        <resultstatus>success</resultstatus>";
+        <checkid>1</checkid>
+        <resultStatus>success</resultStatus>
+        <resultDescription>check succeeded</resultDescription>
+        </root>";
         
         private const string compuscanResponse =
             @"<S:Envelope xmlns:S=""http://schemas.xmlsoap.org/soap/envelope/"">
