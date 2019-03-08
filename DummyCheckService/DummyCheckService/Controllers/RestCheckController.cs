@@ -39,5 +39,13 @@ namespace DummyCheckService.Controllers
         {
             return JObject.FromObject(new Checks((string)candidateDetails["name"], (string)candidateDetails["surname"], (int)candidateDetails["id"], false));
         }
+        // POST api/RestCheck
+        [HttpGet]
+        [Route("test")]
+        public ActionResult test()
+        {
+            return Ok("New one works!");
+        }
+
     }
 }
