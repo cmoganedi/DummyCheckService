@@ -49,7 +49,7 @@ namespace DummyCheckService.Services
         <resultStatus>success</resultStatus>
         <resultDescription>check succeeded</resultDescription>
         </root>";
-
+        
         private const string compuscanResponse =
             @"<S:Envelope xmlns:S=""http://schemas.xmlsoap.org/soap/envelope/"">
                <S:Body>

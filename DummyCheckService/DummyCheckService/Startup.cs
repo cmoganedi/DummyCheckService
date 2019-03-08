@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Hangfire;
+using DummyCheckService.Controllers;
 
 namespace DummyCheckService
 {
@@ -43,6 +45,10 @@ namespace DummyCheckService
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            //app.UseHangfireServer();
+            //app.UseHangfireDashboard();
+            //LongRunningMail obj = new LongRunningMail();
+            //RecurringJob.AddOrUpdate(() => obj(), Cron.Hourly);
         }
     }
 }
