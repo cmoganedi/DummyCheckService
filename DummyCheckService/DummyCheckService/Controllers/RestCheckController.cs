@@ -44,7 +44,7 @@ namespace DummyCheckService.Controllers
         [Route("test")]
         public ActionResult test()
         {
-            return Ok("New one works!");
+            return Ok("Really new works!");
         }
 
     }
